@@ -24,5 +24,41 @@ function initialize () {
             flightScreenColor = "blue";
             shuttleHeight.innerHTML += 10000;
         }
-    } 
+    }); 
+
+    landButton.addEventListener("click", function() {
+        window.alert("The shuttle is landing. Landing gear engaged.");
+        flightStatusUpdate.innerHTML = "The shuttle has landed.";
+        flightScreenColor = "green";
+        shuttleHeight.innerHTML = 0;
+    });  
+    
+    abortButton.addEventListener("click", function() {
+        let response = window.confirm("Confirm that you want to abort the mission.");
+        if (response) {
+            flightStatusUpdate.innerHTML = "Mission aborted.";
+            flightScreenColor = "green";
+            shuttleHeight.innerHTML = 0;
+    });  
+
+    upButton.addEventListener("click", function() {
+        // move rocket image up 10 px
+        shuttleHeight.innerHTML += 10000;
+    });  
+
+    downButton.addEventListener("click", function() {
+        // move rocket image down 10 px
+        shuttleHeight.innerHTML -= 10000;
+    });  
+
+    leftButton.addEventListener("click", function() {
+        // move rocket image left 10 px
+    });  
+
+    leftButton.addEventListener("click", function() {
+        // move rocket image right 10 px
+    });  
+
 });
+
+
